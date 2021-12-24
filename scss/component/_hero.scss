@@ -1,0 +1,106 @@
+.hero {
+    padding: var(--gap-6) 0;
+
+    .hold {
+        width: 75%;
+        text-align: center;
+        @include flex($fd: column, $ai: center);
+    }
+
+    //
+    // Head
+    //
+    &Head {
+        padding: var(--gap-2) 0;
+        @include flex($fd: column, $ai: center);
+    }
+    &Title {
+        font-size: 2.75rem;
+    }
+    &Discribtion {
+        max-width: 50ch;
+        margin: var(--gap-1) 0;
+        font-size: 1.1rem;
+        line-height: 1.5em;
+        opacity: 0.75;
+    }
+    &Btn {
+        margin-top: var(--gap-1);
+        padding: var(--gap-1) var(--gap-4);
+        font-size: 1.1rem;
+        font-weight: 600;
+        background: var(--pink);
+        color: var(--veryPaleBlue);
+        border: 1px solid var(--pink);
+        border-radius: var(--gap-3);
+    }
+
+    //
+    // Img
+    //
+    &Img {
+        width: 100%;
+        padding: var(--gap-6) 0;
+        object-fit: contain;
+    }
+
+    //
+    // Count
+    //
+    &Count {
+        width: 100%;
+        padding: var(--gap-2) 0;
+        @include flex($ai: center, $jc: space-between);
+    }
+    &Card {
+        @include flex($fd: column);
+
+        &Img {
+            width: fit-content;
+            height: var(--gap-3);
+            object-fit: contain;
+        }
+        &Title {
+            font-size: 5rem;
+        }
+        &Discribtion {
+            font-size: 1.1rem;
+            opacity: 0.5;
+        }
+    }
+
+    //
+    //
+    //
+    @include medium() {
+        padding: var(--gap-3) 0;
+
+        //
+        // Head
+        //
+        &Title {
+            font-size: 2rem;
+        }
+        &Discribtion {
+            font-size: 0.9rem;
+        }
+        &Btn {
+            font-size: 1rem;
+        }
+
+        //
+        // Img
+        //
+        &Img {
+            padding: var(--gap-4) 0;
+        }
+
+        //
+        // Count
+        //
+        &Count {
+            flex-direction: column;
+            gap: var(--gap-6);
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.head {
+    padding: var(--gap-3) 0;
+
+    .hold {
+        @include flex($ai: center, $jc: space-between);
+    }
+
+    &Logo > img {
+        height: var(--gap-2-5);
+        object-fit: contain;
+    }
+    &Btn {
+        padding: var(--gap-0-5) var(--gap-1-5);
+        font-size: 1rem;
+        font-weight: 600;
+        background: none;
+        color: var(--lightPink);
+        border: 1px solid var(--lightPink);
+        border-radius: var(--gap-1-5);
+    }
+
+    //
+    //
+    //
+    @include medium() {
+        padding: var(--gap-1-5) 0;
+
+        &Logo > img {
+            height: var(--gap-1-5);
+        }
+    }
+}

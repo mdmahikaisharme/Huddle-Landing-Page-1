@@ -1,0 +1,144 @@
+.feature {
+    padding: var(--gap-2) 0;
+    display: grid;
+    grid-template: repeat(3, 1fr) / 1fr;
+
+    &Row {
+        margin: calc(var(--gap-2) * 4) 0;
+        position: relative;
+
+        .hold {
+            @include flex($ai: center, $jc: space-between);
+        }
+
+        &:first-child {
+            background-color: hsl(207, 100%, 98%);
+
+            .featureBg {
+                &Top {
+                    background-image: url("../../images/bg-section-top-desktop-1.svg");
+                }
+                &Bottom {
+                    background-image: url("../../images/bg-section-bottom-desktop-1.svg");
+                }
+            }
+        }
+        &:last-child {
+            background-color: hsl(207, 100%, 98%);
+
+            .featureBg {
+                &Top {
+                    background-image: url("../../images/bg-section-top-desktop-2.svg");
+                }
+                &Bottom {
+                    background-image: url("../../images/bg-section-bottom-desktop-2.svg");
+                }
+            }
+        }
+    }
+
+    //
+    // Txt
+    //
+    &Txt {
+        width: 45%;
+    }
+    &Title {
+        font-size: 2.5rem;
+    }
+    &Discribtion {
+        max-width: 50ch;
+        margin: var(--gap-1) 0;
+        font-size: 1.1rem;
+        line-height: 1.5em;
+        opacity: 0.75;
+    }
+
+    //
+    // Img
+    //
+    &Img {
+        width: 45%;
+        object-fit: contain;
+    }
+
+    //
+    // Bg
+    //
+    &Bg {
+        width: 100%;
+        height: var(--bgImgS);
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &Top {
+            @extend .featureBg;
+            left: 0;
+            bottom: 100%;
+            background-position: left top;
+        }
+        &Bottom {
+            @extend .featureBg;
+            left: 0;
+            top: 100%;
+            background-position: left bottom;
+        }
+    }
+
+    //
+    //
+    //
+    @include medium() {
+        &Row {
+            margin: calc(var(--gap-2) * 4) 0;
+
+            .hold {
+                text-align: center;
+                flex-direction: column-reverse;
+                gap: var(--gap-4);
+            }
+
+            &:first-child {
+                .featureBg {
+                    &Top {
+                        background-image: url("../../images/bg-section-top-mobile-1.svg");
+                    }
+                    &Bottom {
+                        background-image: url("../../images/bg-section-bottom-mobile-1.svg");
+                    }
+                }
+            }
+            &:last-child {
+                .featureBg {
+                    &Top {
+                        background-image: url("../../images/bg-section-top-mobile-2.svg");
+                    }
+                    &Bottom {
+                        background-image: url("../../images/bg-section-bottom-mobile-2.svg");
+                    }
+                }
+            }
+        }
+
+        //
+        // Txt
+        //
+        &Txt {
+            width: 100%;
+        }
+        &Title {
+            font-size: 2.5rem;
+        }
+        &Discribtion {
+            margin: var(--gap-1) auto;
+        }
+
+        //
+        // Img
+        //
+        &Img {
+            width: 80%;
+        }
+    }
+}

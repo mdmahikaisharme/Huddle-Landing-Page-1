@@ -1,0 +1,19 @@
+@mixin flex($fd: null, $ai: null, $jc: null) {
+    display: flex;
+
+    @if $fd != null {
+        flex-direction: $fd;
+    }
+    @if $ai != null {
+        align-items: $ai;
+    }
+    @if $jc != null {
+        justify-content: $jc;
+    }
+}
+
+@mixin medium {
+    @media (max-width: 850px) {
+        @content;
+    }
+}
